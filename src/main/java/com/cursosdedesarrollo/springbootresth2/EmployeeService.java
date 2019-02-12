@@ -7,9 +7,9 @@ public interface EmployeeService {
 
     public Employee getEmployee(Long employeeId);
 
-    public void saveEmployee(Employee employee);
+    public Employee saveEmployee(Employee employee);
 
-    public void deleteEmployee(Long employeeId);
+    public Employee deleteEmployee(Long employeeId);
 
-    public void updateEmployee(Employee employee);
+    public Employee updateEmployee(Employee employee);
 }

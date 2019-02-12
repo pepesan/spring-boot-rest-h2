@@ -30,9 +30,11 @@ public class EmployeeRestController {
     }
 
     @PostMapping("/api/employees")
-    public void saveEmployee(Employee employee){
+    public Employee saveEmployee(Employee employee){
         employeeService.saveEmployee(employee);
         System.out.println("Employee Saved Successfully");
+        System.out.println(employee);
+        return employee;
     }
 
     @DeleteMapping("/api/employees/{employeeId}")
