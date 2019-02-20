@@ -38,18 +38,21 @@ public class EmployeeRestController {
     }
 
     @DeleteMapping("/api/employees/{employeeId}")
-    public void deleteEmployee(@PathVariable(name="employeeId")Long employeeId){
+    public Employee deleteEmployee(@PathVariable(name="employeeId")Long employeeId){
+        Employee employee= employeeService.getEmployee(employeeId);
         employeeService.deleteEmployee(employeeId);
         System.out.println("Employee Deleted Successfully");
+        return employee;
     }
 
     @PutMapping("/api/employees/{employeeId}")
-    public void updateEmployee(@RequestBody Employee employee,
+    public Employee updateEmployee(@RequestBody Employee employee,
                                @PathVariable(name="employeeId")Long employeeId){
         Employee emp = employeeService.getEmployee(employeeId);
         if(emp != null){
             employeeService.updateEmployee(employee);
         }
+        return employee;
 
     }
 

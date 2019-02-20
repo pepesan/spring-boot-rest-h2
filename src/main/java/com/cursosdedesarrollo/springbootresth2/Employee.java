@@ -28,15 +28,6 @@ public class Employee {
     @Column(name="DEPARTMENT")
     private String department;
 
-    public Employee() {
-        this.name = "";
-        this.salary = 0;
-        this.department = "";
-    }
-    public Employee(String name, Integer salary, String department) {
-        this.name = name;
-        this.salary = salary;
-        this.department = department;
-    }
+
 
 }

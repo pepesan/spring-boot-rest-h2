@@ -30,11 +30,9 @@ public class EmployeeServiceImpl implements EmployeeService{
         return employee;
     }
 
-    public Employee deleteEmployee(Long employeeId){
-        Optional<Employee> optEmp = employeeRepository.findById(employeeId);
-        Employee employee= optEmp.get();
-        employeeRepository.deleteById(employee.getId());
-        return employee;
+    public void deleteEmployee(Long employeeId){
+        employeeRepository.deleteById(employeeId);
+
     }
 
     public Employee updateEmployee(Employee employee) {
