@@ -1,7 +1,10 @@
-package com.cursosdedesarrollo.springbootresth2;
+package com.cursosdedesarrollo.springbootresth2.services;
 
 import java.util.List;
 import java.util.Optional;
+
+import com.cursosdedesarrollo.springbootresth2.domain.Employee;
+import com.cursosdedesarrollo.springbootresth2.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +14,6 @@ public class EmployeeServiceImpl implements EmployeeService{
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    public void setEmployeeRepository(EmployeeRepository employeeRepository) {
-        this.employeeRepository = employeeRepository;
-    }
 
     public List<Employee> retrieveEmployees() {
         List<Employee> employees = employeeRepository.findAll();

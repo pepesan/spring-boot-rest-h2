@@ -1,6 +1,9 @@
-package com.cursosdedesarrollo.springbootresth2;
+package com.cursosdedesarrollo.springbootresth2.controllers;
 
 import java.util.List;
+
+import com.cursosdedesarrollo.springbootresth2.domain.Employee;
+import com.cursosdedesarrollo.springbootresth2.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +23,7 @@ public class EmployeeRestController {
     }
 
     @PostMapping
-    public Employee saveEmployee(Employee employee){
+    public Employee saveEmployee(@RequestBody Employee employee){
         employeeService.saveEmployee(employee);
         System.out.println("Employee Saved Successfully");
         System.out.println(employee);

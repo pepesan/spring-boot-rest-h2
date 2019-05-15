@@ -1,4 +1,4 @@
-package com.cursosdedesarrollo.springbootresth2;
+package com.cursosdedesarrollo.springbootresth2.domain;
 
 import lombok.Data;
 
