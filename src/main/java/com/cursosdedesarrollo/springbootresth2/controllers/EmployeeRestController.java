@@ -21,7 +21,8 @@ public class EmployeeRestController {
 
     @GetMapping
     public List<Employee> getEmployees() {
-        List<Employee> employees = employeeService.retrieveEmployees();
+        List<Employee> employees
+                = employeeService.retrieveEmployees();
         /*
         List<Employee> employees =new ArrayList<>();
         for (int i = 0; i>10;i++){
@@ -33,7 +34,8 @@ public class EmployeeRestController {
     }
 
     @PostMapping
-    public Employee saveEmployee( @Valid @RequestBody Employee employee){
+    public Employee saveEmployee(
+            @Valid @RequestBody Employee employee){
         employeeService.saveEmployee(employee);
         System.out.println("Employee Saved Successfully");
         System.out.println(employee);

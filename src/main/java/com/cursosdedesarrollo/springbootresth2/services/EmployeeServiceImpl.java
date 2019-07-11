@@ -30,18 +30,23 @@ public class EmployeeServiceImpl implements EmployeeService{
      */
 
     public List<Employee> retrieveEmployees() {
-        List<Employee> employees = employeeRepository.findAll();
+        List<Employee> employees
+                = employeeRepository.findAll();
         return employees;
     }
 
     public Employee getEmployee(Long employeeId) {
-        Optional<Employee> optEmp = employeeRepository.findById(employeeId);
+        Optional<Employee> optEmp
+                = employeeRepository.findById(employeeId);
+        /*
         if(optEmp.isPresent()){
             return optEmp.get();
         }else{
             return new Employee();
         }
 
+         */
+        return optEmp.orElseGet(Employee::new);
     }
 
     public Employee saveEmployee(Employee employee){
